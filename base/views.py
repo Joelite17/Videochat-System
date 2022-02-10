@@ -1,3 +1,4 @@
+import imp
 import os
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -7,9 +8,10 @@ from agora_token_builder import RtcTokenBuilder
 from .models import RoomMember
 import json
 from django.views.decorators.csrf import csrf_exempt
+import os
 
-from dotenv import load_dotenv
-load_dotenv()
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 # Create your views here.
 
 
@@ -22,8 +24,8 @@ def room(request):
 
 
 def getToken(request):
-    appId = SECRET_KEY = os.getenv('APP_ID')
-    appCertificate = SECRET_KEY = os.getenv('APP_CERTIFICATE')
+    appId = "YOUR APP_ID"
+    appCertificate = "YOUR APP_CERTIFICATE"
 
     channelName = request.GET.get('channel')
     uid = random.randint(1, 230)
