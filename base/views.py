@@ -8,10 +8,6 @@ from agora_token_builder import RtcTokenBuilder
 from .models import RoomMember
 import json
 from django.views.decorators.csrf import csrf_exempt
-import os
-
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
 # Create your views here.
 
 
